@@ -8,7 +8,7 @@ commentRouter.post("/:id/comments", async (req, res) => {
   const collection = db.collection("posts");
   const postId = new ObjectId(req.params.id);
   const commentData = { ...req.body };
-  const commentId = new ObjectId(req.params.id);
+  const commentId = new ObjectId();
   /**modifiedCount เอาไว้รายงานจำนวนเอกสารที่ถูกปรับเปลี่ยน ใช้กับพวก
    * updateOne, updateMany, deleteOne, หรือ deleteMany ถ้ามีการเปลี่ยนแปลง
    * modifiedCountจะเท่ากับ 1 แต่ถ้าไม่มี modifiedCountจะ = 0
